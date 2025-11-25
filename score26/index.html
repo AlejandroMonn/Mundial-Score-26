@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Polla Mundial 2026</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <center>
+        <h1>POLLA MUNDIALISTA 2026</h1>
+        <h3>Predice y Gana</h3>
+        <div class="caja-login">
+            <label>Ingresa tu Nombre:</label><br>
+            <input type="text" id="nombreUsuario" placeholder="Tu nombre aqui..."><br><br>
+            <button onclick="entrar()" class="btn-grande">EMPEZAR A JUGAR</button>
+        </div>
+        <br>
+        <a href="reglas.html">Ver Reglas y Puntajes</a>
+    </center>
+
+    <script src="logica.js"></script>
+    <script>
+        function entrar() {
+            var nombre = document.getElementById("nombreUsuario").value;
+            if(nombre == "") {
+                alert("Por favor escribe tu nombre para poder guardar");
+            } else {
+                localStorage.setItem("usuario_polla", nombre);
+                window.location.href = "juego.html";
+            }
+        }
+    </script>
+</body>
+</html>
