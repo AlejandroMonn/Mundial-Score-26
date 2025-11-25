@@ -1,0 +1,32 @@
+body {
+    background-color: #004d40; /* Verde oscuro tipo cancha */
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #ffd700; /* Dorado copa */
+    font-size: 50px;
+    text-shadow: 2px 2px #000000;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+button {
+    background-color: #ffd700;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 18px;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+/* Aun no se muy bien como usar clases, asi que dejo esto aqui vacio */
+.caja {
+    
+}
