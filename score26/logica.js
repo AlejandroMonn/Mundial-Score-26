@@ -7,7 +7,7 @@ console.log("Entrando a la logica...");
 var currentUser = localStorage.getItem("nombre_usuario_polla");
 
 if (currentUser) {
-    // Si ya hay nombre, lo ponemos en el HTML
+
     var spanNombre = document.getElementById("verNombre");
     if(spanNombre) {
         spanNombre.innerText = currentUser;
@@ -16,7 +16,6 @@ if (currentUser) {
     console.log("No hay usuario todavia");
 }
 
-// Funcion para guardar el nombre desde el index
 function guardarNombre() {
     var inputNombre = document.getElementById("nombreUsuario").value;
     
@@ -25,17 +24,62 @@ function guardarNombre() {
         return;
     }
     
-    // Guardamos en el navegador
+   
     localStorage.setItem("nombre_usuario_polla", inputNombre);
     alert("Bienvenido " + inputNombre + ", ahora te redirijo al juego.");
     
-    // Ir a la pagina del juego
+   
     window.location.href = "juego.html";
 }
 
-// Probando si funcionan las variables globales
-var puntos_exacto = 5; // Segun la hoja de papel
+
+var puntos_exacto = 5; 
 var puntos_ganador = 2; 
 var puntos_campeon = 13;
 
 console.log("Configuracion cargada.");
+
+
+function calcularPuntosPartido(realL, realV, userL, userV) {
+    var puntos = 0;
+
+    
+    realL = parseInt(realL);
+    realV = parseInt(realV);
+    userL = parseInt(userL);
+    userV = parseInt(userV);
+
+   
+    if (realL == userL && realV == userV) {
+        puntos = 5;
+        return puntos; 
+    }
+
+
+    
+    var ganadorReal = "";
+    if (realL > realV) {
+        ganadorReal = "LOCAL";
+    } else if (realV > realL) {
+        ganadorReal = "VISITA";
+    } else {
+        ganadorReal = "EMPATE";
+    }
+
+    var ganadorUser = "";
+    if (userL > userV) {
+        ganadorUser = "LOCAL";
+    } else if (userV > userL) {
+        ganadorUser = "VISITA";
+    } else {
+        ganadorUser = "EMPATE";
+    }
+
+
+    if (ganadorReal == ganadorUser) {
+        puntos = 2;
+    }
+
+    return puntos;
+}
+
