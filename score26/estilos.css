@@ -1,55 +1,69 @@
-body {
-    background-color: #004d40; /* Verde oscuro tipo cancha */
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-}
+/* =========================================
+   ESTILOS DE LOS GRUPOS (Colores Mundial 2026)
+   Saque los colores con una pagina de gotero
+   ========================================= */
 
-h1 {
-    color: #ffd700; /* Dorado copa */
-    font-size: 50px;
-    text-shadow: 2px 2px #000000;
-}
-
-input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid black;
-}
-
-button {
-    background-color: #ffd700;
-    padding: 10px 20px;
-    font-weight: bold;
-    font-size: 18px;
-    border: 2px solid white;
-    cursor: pointer;
-}
-
-/* Aun no se muy bien como usar clases, asi que dejo esto aqui vacio */
-.caja {
-    
-}
-/* Agregado para los grupos */
-
-.grupo {
-    background-color: white;
-    color: black;
-    border: 3px solid #ffd700; /* Borde amarillo */
-    padding: 15px;
-    margin: 10px;
-    width: 300px;
-    display: inline-block; /* Truco de novato para ponerlos de lado */
-    vertical-align: top;
-    text-align: center;
-}
-
-.grupo input {
-    width: 40px;
-    text-align: center;
-}
-
+/* Estilo base para textos dentro de los grupos de color */
 .grupo h3 {
-    text-decoration: underline;
-    color: #004d40;
+    color: white;
+    text-shadow: 2px 2px 0px #000; /* Sombra negra para que se lea */
+    border-bottom: 2px solid white;
+}
+.grupo p {
+    color: white;
+    font-weight: bold;
+}
+
+/* PATRON DE COLORES: Morado -> Rojo -> Verde -> Vino */
+
+/* --- GRUPOS MORADOS (A, E, I) --- */
+/* Color sacado de la parte izquierda de la imagen */
+.grupo:nth-of-type(1), 
+.grupo:nth-of-type(5), 
+.grupo:nth-of-type(9) {
+    background-color: #6a0dad; /* Morado fuerte */
+    border: 4px solid #a855f7; /* Borde mas clarito */
+}
+
+/* --- GRUPOS ROJOS (B, F, J) --- */
+/* Color de abajo de la imagen */
+.grupo:nth-of-type(2), 
+.grupo:nth-of-type(6), 
+.grupo:nth-of-type(10) {
+    background-color: #d50000; /* Rojo pasion */
+    border: 4px solid #ff5252;
+}
+
+/* --- GRUPOS VERDES (C, G, K) --- */
+/* Color de la esquina derecha */
+.grupo:nth-of-type(3), 
+.grupo:nth-of-type(7), 
+.grupo:nth-of-type(11) {
+    background-color: #00e676; /* Verde neon chillón */
+    border: 4px solid #69f0ae;
+}
+/* Como el verde es muy brillante, cambio la letra a negra aqui para que se lea */
+.grupo:nth-of-type(3) h3, .grupo:nth-of-type(3) p,
+.grupo:nth-of-type(7) h3, .grupo:nth-of-type(7) p,
+.grupo:nth-of-type(11) h3, .grupo:nth-of-type(11) p {
+    color: black;
+    text-shadow: none;
+    border-bottom: 2px solid black;
+}
+
+/* --- GRUPOS VINO / OSCUROS (D, H, L) --- */
+/* Color de las curvas oscuras de arriba */
+.grupo:nth-of-type(4), 
+.grupo:nth-of-type(8), 
+.grupo:nth-of-type(12) {
+    background-color: #3e2723; /* Marron muy oscuro casi negro */
+    border: 4px solid #5d4037;
+}
+
+/* Ajuste para los inputs dentro de los grupos de color */
+.grupo input {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #000;
+    font-weight: bold;
+    color: #000;
 }
