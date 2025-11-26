@@ -30,3 +30,26 @@ button {
 .caja {
     
 }
+/* Agregado para los grupos */
+
+.grupo {
+    background-color: white;
+    color: black;
+    border: 3px solid #ffd700; /* Borde amarillo */
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block; /* Truco de novato para ponerlos de lado */
+    vertical-align: top;
+    text-align: center;
+}
+
+.grupo input {
+    width: 40px;
+    text-align: center;
+}
+
+.grupo h3 {
+    text-decoration: underline;
+    color: #004d40;
+}
