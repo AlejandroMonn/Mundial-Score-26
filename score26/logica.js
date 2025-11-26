@@ -43,43 +43,17 @@ console.log("Configuracion cargada.");
 function calcularPuntosPartido(realL, realV, userL, userV) {
     var puntos = 0;
 
-    
-    realL = parseInt(realL);
-    realV = parseInt(realV);
-    userL = parseInt(userL);
-    userV = parseInt(userV);
 
-   
-    if (realL == userL && realV == userV) {
-        puntos = 5;
-        return puntos; 
+    if (realL === "" || realV === "" || userL === "" || userV === "") {
+        console.log("Faltan datos en este partido");
+        return 0;
     }
+    realL = Number(realL);
+    realV = Number(realV);
+    userL = Number(userL);
+    userV = Number(userV);
 
 
-    
-    var ganadorReal = "";
-    if (realL > realV) {
-        ganadorReal = "LOCAL";
-    } else if (realV > realL) {
-        ganadorReal = "VISITA";
-    } else {
-        ganadorReal = "EMPATE";
-    }
-
-    var ganadorUser = "";
-    if (userL > userV) {
-        ganadorUser = "LOCAL";
-    } else if (userV > userL) {
-        ganadorUser = "VISITA";
-    } else {
-        ganadorUser = "EMPATE";
-    }
-
-
-    if (ganadorReal == ganadorUser) {
-        puntos = 2;
-    }
-
-    return puntos;
 }
+
 
