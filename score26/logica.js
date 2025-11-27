@@ -56,4 +56,30 @@ function calcularPuntosPartido(realL, realV, userL, userV) {
 
 }
 
+// Ahora si conecta. Vi un tutorial de un indu que explicaba bien.
+// CONEXION A SUPABASE
+var supabaseUrl = 'https://TU_PROYECTO.supabase.co'; 
+var supabaseKey = 'TU_PUBLIC_KEY_LARGA_AQUI'; // OJO: NO BORRAR ESTA CLAVE O DEJA DE FUNCIONAR
+var _supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+console.log("Supabase listo");
+
+// Funcion para guardar el usuario en la tabla 'usuarios'
+// Tuve que crear la tabla en la pagina web primero
+async function guardarUsuarioEnNube(nombre) {
+    console.log("Guardando a: " + nombre);
+    
+    const { data, error } = await _supabase
+        .from('usuarios')
+        .insert([
+            { nombre_completo: nombre, fecha_registro: new Date() },
+        ]);
+        
+    if (error) {
+        console.log("Error guardando: " + error.message);
+        alert("Hubo un error guardando tu usuario.");
+    } else {
+        console.log("Usuario guardado en la nube!");
+    }
+}
 
