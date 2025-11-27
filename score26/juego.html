@@ -213,3 +213,66 @@
         <p>L2 vs L3</p>
         <input type="number" id="gL_p6_local"> - <input type="number" id="gL_p6_visit"><br>
     </div>
+<hr style="border: 2px solid black;">
+    
+    <div class="seccion-fases">
+        <center>
+            <h2>FASE DE ELIMINACIÓN DIRECTA (32 Equipos)</h2>
+            <p style="background-color: yellow; color: red; padding: 5px;">
+                ¡OJO! Aquí no puede haber empate. Si crees que empatan en los 90 min, 
+                selecciona quién gana en penales.
+            </p>
+        </center>
+
+        <div class="fase-elim">
+            <h3>Partidos de 16vos de Final</h3>
+            
+            <div class="llave">
+                <label>P1: 2do Grupo A vs 2do Grupo B</label><br>
+                <input type="number" id="p16_1_L" placeholder="L"> - <input type="number" id="p16_1_V" placeholder="V">
+                <br>
+                <span>Ganador Penales:</span>
+                <select id="penales_16_1">
+                    <option value="none">--</option>
+                    <option value="L">Local (2A)</option>
+                    <option value="V">Visitante (2B)</option>
+                </select>
+            </div>
+            <br>
+
+            <div class="llave">
+                <label>P2: 1ro Grupo E vs 3ro (A,B,C,D,F)</label><br>
+                <input type="number" id="p16_2_L"> - <input type="number" id="p16_2_V">
+                <br>
+                <span>Ganador Penales:</span>
+                <select id="penales_16_2">
+                    <option value="none">--</option>
+                    <option value="L">Local</option>
+                    <option value="V">Visitante</option>
+                </select>
+            </div>
+            <br>
+
+            <div class="llave">
+                <label>P3: 1ro Grupo F vs 2do Grupo C</label><br>
+                <input type="number" id="p16_3_L"> - <input type="number" id="p16_3_V">
+                <br>
+                <select id="penales_16_3">
+                    <option value="none">Sin penales</option>
+                    <option value="L">Gana Local</option>
+                    <option value="V">Gana Visita</option>
+                </select>
+            </div>
+            <br>
+            
+            <div class="llave"><label>P4: 1ro C vs 2do F</label> <input type="number" id="p16_4_L"> - <input type="number" id="p16_4_V"> (Penales: <input type="checkbox" id="chk_4_L"> L <input type="checkbox" id="chk_4_V"> V)</div>
+            <div class="llave"><label>P5: 1ro I vs 3ro C,D,F,G,H</label> <input type="number" id="p16_5_L"> - <input type="number" id="p16_5_V"></div>
+            <div class="llave"><label>P6: 2do E vs 2do I</label> <input type="number" id="p16_6_L"> - <input type="number" id="p16_6_V"></div>
+            <div class="llave"><label>P7: 1ro A vs 3ro C,E,F,H,I</label> <input type="number" id="p16_7_L"> - <input type="number" id="p16_7_V"></div>
+            
+            <div class="llave">
+                <label>P16: 2do D vs 2do G</label> <input type="number" id="p16_16_L"> - <input type="number" id="p16_16_V">
+            </div>
+
+        </div>
+    </div>
