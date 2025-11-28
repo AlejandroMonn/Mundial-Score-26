@@ -107,3 +107,28 @@ input[type="text"], input[type="number"] {
     box-shadow: none;
     transform: translateY(5px);
 }
+/* ARREGLOS PARA CELULAR */
+/* Busque en google como hacer que se vea bien en movil */
+
+@media only screen and (max-width: 600px) {
+    .grupo {
+        width: 90%; /* Que ocupe casi toda la pantalla */
+        display: block; /* Que se pongan uno abajo del otro */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    input[type="text"] {
+        width: 100%; /* Los inputs de texto grandes */
+    }
+
+    .fase-elim {
+        font-size: 14px;
+        padding: 5px;
+    }
+    
+    /* Achicar un poco los numeros */
+    input[type="number"] {
+        width: 30px; 
+    }
+}
