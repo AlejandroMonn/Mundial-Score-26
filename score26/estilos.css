@@ -67,3 +67,43 @@
     font-weight: bold;
     color: #000;
 }
+/* CAMBIO DE DISEÑO FINAL - ESTILO CANCHA */
+
+body {
+    /* Verde pasto fuerte */
+    background-color: #2e7d32; 
+    color: white;
+    font-family: 'Verdana', sans-serif; /* Cambie la letra */
+    margin: 0;
+    padding: 15px;
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff; /* Blanco puro */
+    text-shadow: 2px 2px 4px #000000; /* Sombra negra para que resalte */
+}
+
+/* Arreglando los inputs para que se vean en el fondo verde */
+input[type="text"], input[type="number"] {
+    background-color: #f1f8e9; /* Verde muy clarito */
+    border: 2px solid #1b5e20;
+    padding: 8px;
+    color: black;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+/* Boton guardar mas llamativo */
+.btn-guardar {
+    background-color: #ffeb3b; /* Amarillo patito */
+    color: black;
+    border: 3px solid orange;
+    box-shadow: 0px 5px 0px #f57f17; /* Efecto 3D simple */
+}
+
+.btn-guardar:active {
+    box-shadow: none;
+    transform: translateY(5px);
+}
