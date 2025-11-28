@@ -120,8 +120,50 @@ function calcularPuntosFinales(userCampeon, realCampeon, userSub, realSub, user3
     if (userGol == realGol) {
         puntosExtra = puntosExtra + 8; // 8 puntos goleadora
     }
+// FUNCION PARA CALCULAR LOS PUNTOS EXTRA
+// Valores sacados de mi cuaderno:
+// Campeon = 13 pts
+// Subcampeon = 10 pts
+// 3r puesto = 6 pts
+// Goleadora = 8 pts
+
+function calcularPuntosFinales(userCampeon, realCampeon, userSub, realSub, user3ro, real3ro, userGol, realGol) {
+    var puntosExtra = 0;
+
+    // Convertimos todo a mayusculas para que no haya problema
+    // Ej: "colombia" se vuelve "COLOMBIA"
+    userCampeon = userCampeon.toUpperCase().trim();
+    realCampeon = realCampeon.toUpperCase().trim();
+    userSub = userSub.toUpperCase().trim();
+    realSub = realSub.toUpperCase().trim();
+    user3ro = user3ro.toUpperCase().trim();
+    real3ro = real3ro.toUpperCase().trim();
+    userGol = userGol.toUpperCase().trim();
+    realGol = realGol.toUpperCase().trim();
+
+    // Logica simple
+    if (userCampeon == realCampeon) {
+        puntosExtra = puntosExtra + 13; // 13 puntos al campeon
+    }
+
+    if (userSub == realSub) {
+        puntosExtra = puntosExtra + 10; // 10 al subcampeon
+    }
+
+    if (user3ro == real3ro) {
+        puntosExtra = puntosExtra + 6; // 6 al tercero
+    }
+    
+    // Seleccion mas goleadora
+    if (userGol == realGol) {
+        puntosExtra = puntosExtra + 8; // 8 puntos goleadora
+    }
 
     console.log("Puntos extra ganados: " + puntosExtra);
     return puntosExtra;
 }
+    console.log("Puntos extra ganados: " + puntosExtra);
+    return puntosExtra;
+}
+
 
