@@ -22,7 +22,7 @@ Reglas
 - Tercero: 6 puntos
 - Equipo goleador: 8 puntos
 
-Hecho por: [Tu Nombre]
+Hecho por: Alejandro Montoya
 Version: 1.0 (Noviembre 2025)
 
 Nota: Los grupos todavia no son reales porque no han sorteado, asi que puse A1, A2, etc. Solo Mexico, Canada y USA tienen puesto fijo.
