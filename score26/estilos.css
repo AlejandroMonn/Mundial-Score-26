@@ -132,3 +132,28 @@ input[type="text"], input[type="number"] {
         width: 30px; 
     }
 }
+.footer-final {
+    background-color: #1b5e20; 
+    color: #bdbdbd; 
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 5px solid #ffd700; 
+}
+
+@media only screen and (max-width: 600px) {
+    .grupo {
+        width: 90%; 
+        display: block; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    input[type="number"] {
+        width: 30px; 
+    }
+}
