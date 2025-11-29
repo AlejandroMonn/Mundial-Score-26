@@ -9,29 +9,20 @@
     <center>
         <h1>POLLA MUNDIALISTA 2026</h1>
         <h3>Predice y Gana</h3>
+        <img src="logo_mundial.jpg" alt="Logo Mundial" width="200">
+        <br><br>
+        
         <div class="caja-login">
             <label>Ingresa tu Nombre:</label><br>
-            <input type="text" id="nombreUsuario" placeholder="Tu nombre aqui..."><br><br>
-            <button onclick="entrar()" class="btn-grande">EMPEZAR A JUGAR</button>
-            <img src="logo_mundial.jpg" alt="Logo Mundial" width="200">
-<br><br>
+            <input type="text" id="nombreUsuario" placeholder="Tu nombre aqui..." required><br><br>
+            <button onclick="guardarNombre()" class="btn-grande">EMPEZAR A JUGAR</button>
         </div>
         <br>
-        <a href="reglas.html">Ver Reglas y Puntajes</a>
+        <a href="reglas.html" style="color: white; font-weight: bold;">Ver Reglas y Puntajes</a>
     </center>
 
     <script src="logica.js"></script>
-    <script>
-        function entrar() {
-            var nombre = document.getElementById("nombreUsuario").value;
-            if(nombre == "") {
-                alert("Por favor escribe tu nombre para poder guardar");
-            } else {
-                localStorage.setItem("usuario_polla", nombre);
-                window.location.href = "juego.html";
-            }
-        }
-    </script>
-</body>
+    </body>
 </html>
+
 
