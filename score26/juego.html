@@ -1,15 +1,26 @@
-<div class="grupo">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Polla - Predicciones</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <center>
+        <h2>Hola, <span id="verNombre"></span></h2>
+        <p>Llena los resultados. Si no sabes los equipos, usa la lógica (1ero, 2do, etc.).</p>
+    </center>
+
+    <div class="grupo">
         <h3>GRUPO A</h3>
         <p><b>A1 (México)</b> vs A2</p>
         <input type="number" id="gA_p1_local"> - <input type="number" id="gA_p1_visit"><br>
         <p>A3 vs A4</p>
         <input type="number" id="gA_p2_local"> - <input type="number" id="gA_p2_visit"><br>
-        
         <p><b>A1 (México)</b> vs A3</p>
         <input type="number" id="gA_p3_local"> - <input type="number" id="gA_p3_visit"><br>
         <p>A4 vs A2</p>
         <input type="number" id="gA_p4_local"> - <input type="number" id="gA_p4_visit"><br>
-        
         <p>A4 vs <b>A1 (México)</b></p>
         <input type="number" id="gA_p5_local"> - <input type="number" id="gA_p5_visit"><br>
         <p>A2 vs A3</p>
@@ -22,12 +33,10 @@
         <input type="number" id="gB_p1_local"> - <input type="number" id="gB_p1_visit"><br>
         <p>B3 vs B4</p>
         <input type="number" id="gB_p2_local"> - <input type="number" id="gB_p2_visit"><br>
-        
         <p><b>B1 (Canadá)</b> vs B3</p>
         <input type="number" id="gB_p3_local"> - <input type="number" id="gB_p3_visit"><br>
         <p>B4 vs B2</p>
         <input type="number" id="gB_p4_local"> - <input type="number" id="gB_p4_visit"><br>
-        
         <p>B4 vs <b>B1 (Canadá)</b></p>
         <input type="number" id="gB_p5_local"> - <input type="number" id="gB_p5_visit"><br>
         <p>B2 vs B3</p>
@@ -40,12 +49,10 @@
         <input type="number" id="gC_p1_local"> - <input type="number" id="gC_p1_visit"><br>
         <p>C3 vs C4</p>
         <input type="number" id="gC_p2_local"> - <input type="number" id="gC_p2_visit"><br>
-        
         <p>C1 vs C3</p>
         <input type="number" id="gC_p3_local"> - <input type="number" id="gC_p3_visit"><br>
         <p>C4 vs C2</p>
         <input type="number" id="gC_p4_local"> - <input type="number" id="gC_p4_visit"><br>
-        
         <p>C4 vs C1</p>
         <input type="number" id="gC_p5_local"> - <input type="number" id="gC_p5_visit"><br>
         <p>C2 vs C3</p>
@@ -58,12 +65,10 @@
         <input type="number" id="gD_p1_local"> - <input type="number" id="gD_p1_visit"><br>
         <p>D3 vs D4</p>
         <input type="number" id="gD_p2_local"> - <input type="number" id="gD_p2_visit"><br>
-        
         <p><b>D1 (USA)</b> vs D3</p>
         <input type="number" id="gD_p3_local"> - <input type="number" id="gD_p3_visit"><br>
         <p>D4 vs D2</p>
         <input type="number" id="gD_p4_local"> - <input type="number" id="gD_p4_visit"><br>
-        
         <p>D4 vs <b>D1 (USA)</b></p>
         <input type="number" id="gD_p5_local"> - <input type="number" id="gD_p5_visit"><br>
         <p>D2 vs D3</p>
@@ -76,12 +81,10 @@
         <input type="number" id="gE_p1_local"> - <input type="number" id="gE_p1_visit"><br>
         <p>E3 vs E4</p>
         <input type="number" id="gE_p2_local"> - <input type="number" id="gE_p2_visit"><br>
-        
         <p>E1 vs E3</p>
         <input type="number" id="gE_p3_local"> - <input type="number" id="gE_p3_visit"><br>
         <p>E4 vs E2</p>
         <input type="number" id="gE_p4_local"> - <input type="number" id="gE_p4_visit"><br>
-        
         <p>E4 vs E1</p>
         <input type="number" id="gE_p5_local"> - <input type="number" id="gE_p5_visit"><br>
         <p>E2 vs E3</p>
@@ -94,12 +97,10 @@
         <input type="number" id="gF_p1_local"> - <input type="number" id="gF_p1_visit"><br>
         <p>F3 vs F4</p>
         <input type="number" id="gF_p2_local"> - <input type="number" id="gF_p2_visit"><br>
-        
         <p>F1 vs F3</p>
         <input type="number" id="gF_p3_local"> - <input type="number" id="gF_p3_visit"><br>
         <p>F4 vs F2</p>
         <input type="number" id="gF_p4_local"> - <input type="number" id="gF_p4_visit"><br>
-        
         <p>F4 vs F1</p>
         <input type="number" id="gF_p5_local"> - <input type="number" id="gF_p5_visit"><br>
         <p>F2 vs F3</p>
@@ -112,12 +113,10 @@
         <input type="number" id="gG_p1_local"> - <input type="number" id="gG_p1_visit"><br>
         <p>G3 vs G4</p>
         <input type="number" id="gG_p2_local"> - <input type="number" id="gG_p2_visit"><br>
-        
         <p>G1 vs G3</p>
         <input type="number" id="gG_p3_local"> - <input type="number" id="gG_p3_visit"><br>
         <p>G4 vs G2</p>
         <input type="number" id="gG_p4_local"> - <input type="number" id="gG_p4_visit"><br>
-        
         <p>G4 vs G1</p>
         <input type="number" id="gG_p5_local"> - <input type="number" id="gG_p5_visit"><br>
         <p>G2 vs G3</p>
@@ -130,12 +129,10 @@
         <input type="number" id="gH_p1_local"> - <input type="number" id="gH_p1_visit"><br>
         <p>H3 vs H4</p>
         <input type="number" id="gH_p2_local"> - <input type="number" id="gH_p2_visit"><br>
-        
         <p>H1 vs H3</p>
         <input type="number" id="gH_p3_local"> - <input type="number" id="gH_p3_visit"><br>
         <p>H4 vs H2</p>
         <input type="number" id="gH_p4_local"> - <input type="number" id="gH_p4_visit"><br>
-        
         <p>H4 vs H1</p>
         <input type="number" id="gH_p5_local"> - <input type="number" id="gH_p5_visit"><br>
         <p>H2 vs H3</p>
@@ -148,12 +145,10 @@
         <input type="number" id="gI_p1_local"> - <input type="number" id="gI_p1_visit"><br>
         <p>I3 vs I4</p>
         <input type="number" id="gI_p2_local"> - <input type="number" id="gI_p2_visit"><br>
-        
         <p>I1 vs I3</p>
         <input type="number" id="gI_p3_local"> - <input type="number" id="gI_p3_visit"><br>
         <p>I4 vs I2</p>
         <input type="number" id="gI_p4_local"> - <input type="number" id="gI_p4_visit"><br>
-        
         <p>I4 vs I1</p>
         <input type="number" id="gI_p5_local"> - <input type="number" id="gI_p5_visit"><br>
         <p>I2 vs I3</p>
@@ -166,12 +161,10 @@
         <input type="number" id="gJ_p1_local"> - <input type="number" id="gJ_p1_visit"><br>
         <p>J3 vs J4</p>
         <input type="number" id="gJ_p2_local"> - <input type="number" id="gJ_p2_visit"><br>
-        
         <p>J1 vs J3</p>
         <input type="number" id="gJ_p3_local"> - <input type="number" id="gJ_p3_visit"><br>
         <p>J4 vs J2</p>
         <input type="number" id="gJ_p4_local"> - <input type="number" id="gJ_p4_visit"><br>
-        
         <p>J4 vs J1</p>
         <input type="number" id="gJ_p5_local"> - <input type="number" id="gJ_p5_visit"><br>
         <p>J2 vs J3</p>
@@ -184,12 +177,10 @@
         <input type="number" id="gK_p1_local"> - <input type="number" id="gK_p1_visit"><br>
         <p>K3 vs K4</p>
         <input type="number" id="gK_p2_local"> - <input type="number" id="gK_p2_visit"><br>
-        
         <p>K1 vs K3</p>
         <input type="number" id="gK_p3_local"> - <input type="number" id="gK_p3_visit"><br>
         <p>K4 vs K2</p>
         <input type="number" id="gK_p4_local"> - <input type="number" id="gK_p4_visit"><br>
-        
         <p>K4 vs K1</p>
         <input type="number" id="gK_p5_local"> - <input type="number" id="gK_p5_visit"><br>
         <p>K2 vs K3</p>
@@ -202,106 +193,66 @@
         <input type="number" id="gL_p1_local"> - <input type="number" id="gL_p1_visit"><br>
         <p>L3 vs L4</p>
         <input type="number" id="gL_p2_local"> - <input type="number" id="gL_p2_visit"><br>
-        
         <p>L1 vs L3</p>
         <input type="number" id="gL_p3_local"> - <input type="number" id="gL_p3_visit"><br>
         <p>L4 vs L2</p>
         <input type="number" id="gL_p4_local"> - <input type="number" id="gL_p4_visit"><br>
-        
         <p>L4 vs L1</p>
         <input type="number" id="gL_p5_local"> - <input type="number" id="gL_p5_visit"><br>
         <p>L2 vs L3</p>
         <input type="number" id="gL_p6_local"> - <input type="number" id="gL_p6_visit"><br>
     </div>
-<hr style="border: 2px solid black;">
+
+    <hr style="border: 2px solid black;">
     
     <div class="seccion-fases">
         <center>
             <h2>FASE DE ELIMINACIÓN DIRECTA (32 Equipos)</h2>
             <p style="background-color: yellow; color: red; padding: 5px;">
-                ¡OJO! Aquí no puede haber empate. Si crees que empatan en los 90 min, 
-                selecciona quién gana en penales.
+                ¡OJO! Si crees que empatan, selecciona quién gana en penales. (Commit 10, 13)
             </p>
         </center>
-
+        
         <div class="fase-elim">
-            <h3>Partidos de 16vos de Final</h3>
+            <h3>16vos de Final</h3>
             
-            <div class="llave">
-                <label>P1: 2do Grupo A vs 2do Grupo B</label><br>
-                <input type="number" id="p16_1_L" placeholder="L"> - <input type="number" id="p16_1_V" placeholder="V">
+            <div class="partido-elim">
+                <p>1. 2do Grupo A vs 2do Grupo B</p>
+                <input type="number" id="goles_16_1_L" placeholder="L"> - <input type="number" id="goles_16_1_V" placeholder="V">
                 <br>
-                <span>Ganador Penales:</span>
-                <select id="penales_16_1">
-                    <option value="none">--</option>
-                    <option value="L">Local (2A)</option>
-                    <option value="V">Visitante (2B)</option>
-                </select>
+                <label><input type="checkbox" id="penales_16_1_L"> Gana Local en Penales</label>
+                <label><input type="checkbox" id="penales_16_1_V"> Gana Visita en Penales</label>
             </div>
-            <br>
-
-            <div class="llave">
-                <label>P2: 1ro Grupo E vs 3ro (A,B,C,D,F)</label><br>
-                <input type="number" id="p16_2_L"> - <input type="number" id="p16_2_V">
-                <br>
-                <span>Ganador Penales:</span>
-                <select id="penales_16_2">
-                    <option value="none">--</option>
-                    <option value="L">Local</option>
-                    <option value="V">Visitante</option>
-                </select>
-            </div>
-            <br>
-
-            <div class="llave">
-                <label>P3: 1ro Grupo F vs 2do Grupo C</label><br>
-                <input type="number" id="p16_3_L"> - <input type="number" id="p16_3_V">
-                <br>
-                <select id="penales_16_3">
-                    <option value="none">Sin penales</option>
-                    <option value="L">Gana Local</option>
-                    <option value="V">Gana Visita</option>
-                </select>
-            </div>
-            <br>
+            <hr>
             
-            <div class="llave"><label>P4: 1ro C vs 2do F</label> <input type="number" id="p16_4_L"> - <input type="number" id="p16_4_V"> (Penales: <input type="checkbox" id="chk_4_L"> L <input type="checkbox" id="chk_4_V"> V)</div>
-            <div class="llave"><label>P5: 1ro I vs 3ro C,D,F,G,H</label> <input type="number" id="p16_5_L"> - <input type="number" id="p16_5_V"></div>
-            <div class="llave"><label>P6: 2do E vs 2do I</label> <input type="number" id="p16_6_L"> - <input type="number" id="p16_6_V"></div>
-            <div class="llave"><label>P7: 1ro A vs 3ro C,E,F,H,I</label> <input type="number" id="p16_7_L"> - <input type="number" id="p16_7_V"></div>
+            <div class="partido-elim">
+                <p>2. 1ro Grupo E vs Mejor 3ro</p>
+                <input type="number" id="goles_16_2_L"> - <input type="number" id="goles_16_2_V">
+                <br>
+                <input type="checkbox" id="penales_16_2_L"> Gana L (Penales)
+                <input type="checkbox" id="penales_16_2_V"> Gana V (Penales)
+            </div>
+            <hr>
             
-            <div class="llave">
-                <label>P16: 2do D vs 2do G</label> <input type="number" id="p16_16_L"> - <input type="number" id="p16_16_V">
+            <div class="partido-elim">
+                <p>3. 1ro Grupo F vs 2do Grupo C</p>
+                <input type="number" id="goles_16_3_L"> - <input type="number" id="goles_16_3_V">
+                <br>
+                <input type="checkbox" id="penales_16_3_L"> Gana L (Penales)
+                <input type="checkbox" id="penales_16_3_V"> Gana V (Penales)
+            </div>
+            <div class="partido-elim">
+                <p>16. 2do Grupo D vs 2do Grupo G</p>
+                <input type="number" id="goles_16_16_L"> - <input type="number" id="goles_16_16_V">
+                <br>
+                <input type="checkbox" id="penales_16_16_L"> Gana L (Penales)
+                <input type="checkbox" id="penales_16_16_V"> Gana V (Penales)
             </div>
 
         </div>
     </div>
-<div class="fase-elim">
-        <h3>16vos de Final (Si empatan marca la casilla del ganador)</h3>
-        
-        <div class="partido-elim">
-            <p>2A vs 2B</p>
-            <input type="number" id="goles_16_1_L" placeholder="L"> - <input type="number" id="goles_16_1_V" placeholder="V">
-            <br>
-            <label style="font-size: 12px; color: blue;">
-                <input type="checkbox" id="penales_16_1_L"> Gana Local en Penales
-            </label>
-            <label style="font-size: 12px; color: blue;">
-                <input type="checkbox" id="penales_16_1_V"> Gana Visita en Penales
-            </label>
-        </div>
-        <hr>
-
-        <div class="partido-elim">
-            <p>1E vs 3ro (A/B/C/D/F)</p>
-            <input type="number" id="goles_16_2_L"> - <input type="number" id="goles_16_2_V">
-            <br>
-            <input type="checkbox" id="penales_16_2_L"> Gana L (Penales)
-            <input type="checkbox" id="penales_16_2_V"> Gana V (Penales)
-        </div>
-        
-        </div>
-<div class="caja-final" style="border: 5px solid gold; padding: 20px; background-color: #fff8e1;">
+    
+    <div class="caja-final">
         <center>
             <h2>🏆 LA GRAN FINAL 🏆</h2>
             <p>Escribe el nombre del pais. Ej: "Colombia", "Brasil", "Francia"</p>
@@ -321,4 +272,31 @@
             <input type="text" id="pred_goleadora" placeholder="La que meta mas goles"><br>
         </center>
     </div>
-    <br><br>
+    
+    <br><br><br>
+    <button class="btn-guardar" onclick="guardarDatos()">GUARDAR MI POLLA</button>
+
+    <script src="logica.js"></script>
+    
+    <div class="footer-final">
+        <p><b>Polla Mundialista 2026</b></p>
+        <p>Desarrollado 100% a mano por: <b>TU NOMBRE AQUÍ</b></p>
+        <p>Versión 1.0 - ¡Suerte a todos!</p>
+        
+        <button onclick="borrarTodo()" style="background-color: red; color: white; font-size: 10px; padding: 5px;">
+            BORRAR MIS DATOS (REINICIAR)
+        </button>
+    </div>
+
+    <script>
+        function borrarTodo() {
+            var respuesta = confirm("¿Estás seguro? Se borrará tu nombre y todas tus predicciones.");
+            if (respuesta == true) {
+                localStorage.clear(); 
+                window.location.href = "index.html"; 
+            }
+        }
+    </script>
+</body>
+</html>
+
