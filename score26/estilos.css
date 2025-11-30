@@ -157,3 +157,18 @@ input[type="text"], input[type="number"] {
         width: 30px; 
     }
 }
+/* ESTILOS DEL FINAL */
+
+.footer-final {
+    background-color: #1b5e20; /* Verde mas oscuro que el fondo */
+    color: #bdbdbd; /* Gris clarito */
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 5px solid #ffd700; /* Linea dorada final */
+}
+
+.footer-final p {
+    margin: 5px;
+    font-size: 14px;
+}
