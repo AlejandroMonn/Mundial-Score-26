@@ -1,28 +1,30 @@
-Polla Mundialista 2026 🇨🇴
+2026 World Cup Pool (Polla Mundialista) 🇨🇴
 
-Esta es una aplicación web para jugar la polla del mundial de 2026 que va a ser en USA, Mexico y Canada.
+This is a web application created to run the pool (sweepstakes) for the 2026 World Cup in the USA, Mexico, and Canada.
 
-Como funciona
-El proyecto esta hecho con HTML y Javascript puro (no use frameworks raros).
-Usa una base de datos gratis de Supabase.
+How It Works
+The project is built using pure HTML and JavaScript (no weird frameworks used).
+It uses a free, cloud-based **Supabase** database to store predictions.
 
-Pasos para jugar:
-1. Abre el archivo `index.html` en tu navegador (Chrome, Edge, el que sea).
-2. Pon tu nombre.
-3. Llena los marcadores de los grupos A hasta el L.
-4. OJO: En la fase de eliminacion si empatan tienes que marcar el checkbox de quien gana en penales.
-5. Al final eliges campeon, subcampeon, tercero y goleadora.
-6. Le das al boton amarillo de GUARDAR.
+Steps to Play
+1. Open the `index.html` file in your browser (Chrome, Edge, whatever works).
+2. Enter your name.
+3. Fill in the scores for Groups A through L.
+4. **ATTENTION:** In the knockout stage, if you predict a draw, you **must** mark the checkbox for who wins in penalties.
+5. Finally, choose the Champion, Runner-up, Third Place, and Top Goal-Scoring Team.
+6. Hit the yellow **SAVE MY POOL** button.
 
-Reglas
-- Marcador exacto: 5 puntos
-- Ganador del partido: 2 puntos
-- Campeon: 13 puntos
-- Subcampeon: 10 puntos
-- Tercero: 6 puntos
-- Equipo goleador: 8 puntos
+Scoring Rules
+- Exact Score: **5 points**
+- Correct Winner or Draw (non-exact score): **2 points**
 
-Hecho por: Alejandro Montoya
-Version: 1.0 (Noviembre 2025)
+Special Final Points
+- Correct **CHAMPION**: **13 points**
+- Correct **RUNNER-UP**: **10 points**
+- Correct **THIRD PLACE**: **6 points**
+- Correct **Top Goal-Scoring Team**: **8 points**
 
-Nota: Los grupos todavia no son reales porque no han sorteado, asi que puse A1, A2, etc. Solo Mexico, Canada y USA tienen puesto fijo.
+Created by: Alejandro montoya
+Version: 1.0 (November 2025)
+
+Note: The specific team groupings are not final yet as the draw hasn't happened. For now, we use A1, A2, etc. Only Mexico, Canada, and the USA have fixed spots, the friday  5  of december this code will be updated
