@@ -1,8 +1,10 @@
-var supabaseUrl = 'https://TU_URL_DE_SUPABASE_AQUI'; 
-var supabaseKey = 'TU_PUBLIC_KEY_LARGA_AQUI'; 
+
+var supabaseUrl = not yet
+var supabaseKey = not yet
 var _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 console.log("Supabase listo");
+
 var puntos_exacto = 5; 
 var puntos_ganador = 2; 
 var puntos_campeon = 13;
@@ -10,35 +12,38 @@ var puntos_sub = 10;
 var puntos_tercero = 6;
 var puntos_goleadora = 8;
 
-var currentUser = localStorage.getItem("nombre_usuario_polla");
+var currentUser = localStorage.getItem("user_name_polla");
 
 if (currentUser) {
-    var spanNombre = document.getElementById("verNombre");
+    var spanNombre = document.getElementById("seeName");
     if(spanNombre) {
         spanNombre.innerText = currentUser;
     }
 }
+
 function guardarNombre() {
-    var inputNombre = document.getElementById("nombreUsuario").value;
+    var inputNombre = document.getElementById("UserName").value;
     
     if (inputNombre == "") {
         alert("Escribe algo por favor!");
         return;
     }
     
-    localStorage.setItem("nombre_usuario_polla", inputNombre);
+    localStorage.setItem("user_name_polla", inputNombre);
     window.location.href = "juego.html";
 }
 
 
+// Funcion para calcular cuantos puntos gana el usuario en un partido (Commit 8, 9)
 function calcularPuntosPartido(realL, realV, userL, userV) {
     var puntos = 0;
 
+    // FIX: A veces llega vacio y da error NaN
     if (realL === "" || realV === "" || userL === "" || userV === "") {
         return 0;
     }
 
-
+    // Convertir a numero 
     realL = Number(realL);
     realV = Number(realV);
     userL = Number(userL);
@@ -55,18 +60,18 @@ function calcularPuntosPartido(realL, realV, userL, userV) {
     if (realL > realV) {
         ganadorReal = "LOCAL";
     } else if (realV > realL) {
-        ganadorReal = "VISITA";
+        ganadorReal = "VISITOR";
     } else {
-        ganadorReal = "EMPATE";
+        ganadorReal = "TIE";
     }
 
     var ganadorUser = "";
     if (userL > userV) {
         ganadorUser = "LOCAL";
     } else if (userV > userL) {
-        ganadorUser = "VISITA";
+        ganadorUser = "VISITOR";
     } else {
-        ganadorUser = "EMPATE";
+        ganadorUser = "TIE";
     }
 
     if (ganadorReal == ganadorUser) {
@@ -77,13 +82,14 @@ function calcularPuntosPartido(realL, realV, userL, userV) {
 }
 
 
-
+// FUNCION PARA CALCULAR LOS PUNTOS EXTRA (Commit 15)
 function calcularPuntosFinales(userCampeon, realCampeon, userSub, realSub, user3ro, real3ro, userGol, realGol) {
     var puntosExtra = 0;
 
+    // Convertimos todo a mayusculas para que no haya problema
     userCampeon = userCampeon.toUpperCase().trim();
     realCampeon = realCampeon.toUpperCase().trim();
-
+    // ... (rest of conversions) ...
 
     if (userCampeon == realCampeon) {
         puntosExtra = puntosExtra + puntos_campeon; 
@@ -104,9 +110,9 @@ function calcularPuntosFinales(userCampeon, realCampeon, userSub, realSub, user3
 
 // FUNCION PRINCIPAL: RECOGER TODO Y GUARDAR (Commit 18)
 async function guardarDatos() {
-    var nombre = localStorage.getItem("nombre_usuario_polla");
+    var nombre = localStorage.getItem("user_name_polla");
     if(!nombre) {
-        alert("No tienes nombre! Vuelve al inicio.");
+        alert("YOU DON HAVE A NAME, GO BACK TO THE BEGINING");
         return;
     }
     
@@ -153,6 +159,8 @@ async function guardarDatos() {
 
     console.log("Ya tengo todo, enviando a Supabase...");
 
+    // ENVIAR A LA BASE DE DATOS
+    // Asegúrate de tener una tabla 'predicciones' en Supabase con columnas 'usuario', 'fecha', 'datos_juego' (tipo JSON)
     const { data, error } = await _supabase
         .from('predicciones')
         .insert([
@@ -164,11 +172,11 @@ async function guardarDatos() {
         ]);
 
     if (error) {
-        alert("ERROR: Hubo un error al guardar. Revisa la consola para más detalles.");
-        console.log("Error de Supabase:", error);
+        alert("ERROR: An error happened saving the data, chech it on the cpnsole ( f12 )");
+        console.log("Error of Supabase:", error);
     } else {
-        alert("¡LISTO! Tu polla mundialista se guardó. Cruzaré los dedos por ti.");
+        alert("¡LISTO! Succesfully saved");
         document.querySelector(".btn-guardar").disabled = true;
-        document.querySelector(".btn-guardar").innerText = "GUARDADO";
+        document.querySelector(".btn-guardar").innerText = "Saved";
     }
 }
