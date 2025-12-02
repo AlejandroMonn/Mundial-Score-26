@@ -2,28 +2,33 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>World Cup 2026 Polla</title>
+    <title>Polla world cup 2026</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <center>
-        <h1>POLLA of world cup 2026</h1>
+        <h1>Polla world cup 2026</h1>
         <h3>Predict and win</h3>
-        <img src="logo_mundial.jpg" alt="Logo Mundial" width="200" style="opacity: 0.8;"><br><br>
+        <img src="logo_mundial.jpg" alt="Logo Mundial" width="200" style="opacity: 0.8; border-radius: 50%;">
+        <br><br>
         
         <div class="caja-login">
-            <label for="nombreUsuario">Tyoe your name</label><br>
-            <input type="text" id="nombreUsuario" placeholder="Your name here..." required><br><br>
-            <button onclick="guardarNombre()" class="btn-grande">Star playing</button>
+            <label>Type your name:</label><br>
+            <input type="text" id="nombreUsuario" placeholder="Tu nombre o apodo..." required><br><br>
+            
+            <button onclick="guardarNombre()" class="btn-grande">Play/ Edit</button>
+            <br><br>
+            
+            <hr>
+            <p>You want to see ho is winning?</p>
+            <a href="posiciones.html">
+                <button class="btn-grande" style="background-color: #ff9800;">See poscionts</button>
+            </a>
         </div>
         <br>
-        <a href="reglas.html">See rules and  leadboard</a>
+        <a href="reglas.html">See rules and califications</a>
     </center>
 
     <script src="logica.js"></script>
 </body>
 </html>
-
-
-
-
