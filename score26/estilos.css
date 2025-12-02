@@ -1,174 +1,166 @@
-/* =========================================
-   ESTILOS DE LOS GRUPOS (Colores Mundial 2026)
-   Saque los colores con una pagina de gotero
-   ========================================= */
-
-/* Estilo base para textos dentro de los grupos de color */
-.grupo h3 {
-    color: white;
-    text-shadow: 2px 2px 0px #000; /* Sombra negra para que se lea */
-    border-bottom: 2px solid white;
-}
-.grupo p {
-    color: white;
-    font-weight: bold;
-}
-
-/* PATRON DE COLORES: Morado -> Rojo -> Verde -> Vino */
-
-/* --- GRUPOS MORADOS (A, E, I) --- */
-/* Color sacado de la parte izquierda de la imagen */
-.grupo:nth-of-type(1), 
-.grupo:nth-of-type(5), 
-.grupo:nth-of-type(9) {
-    background-color: #6a0dad; /* Morado fuerte */
-    border: 4px solid #a855f7; /* Borde mas clarito */
-}
-
-/* --- GRUPOS ROJOS (B, F, J) --- */
-/* Color de abajo de la imagen */
-.grupo:nth-of-type(2), 
-.grupo:nth-of-type(6), 
-.grupo:nth-of-type(10) {
-    background-color: #d50000; /* Rojo pasion */
-    border: 4px solid #ff5252;
-}
-
-/* --- GRUPOS VERDES (C, G, K) --- */
-/* Color de la esquina derecha */
-.grupo:nth-of-type(3), 
-.grupo:nth-of-type(7), 
-.grupo:nth-of-type(11) {
-    background-color: #00e676; /* Verde neon chillón */
-    border: 4px solid #69f0ae;
-}
-/* Como el verde es muy brillante, cambio la letra a negra aqui para que se lea */
-.grupo:nth-of-type(3) h3, .grupo:nth-of-type(3) p,
-.grupo:nth-of-type(7) h3, .grupo:nth-of-type(7) p,
-.grupo:nth-of-type(11) h3, .grupo:nth-of-type(11) p {
-    color: black;
-    text-shadow: none;
-    border-bottom: 2px solid black;
-}
-
-/* --- GRUPOS VINO / OSCUROS (D, H, L) --- */
-/* Color de las curvas oscuras de arriba */
-.grupo:nth-of-type(4), 
-.grupo:nth-of-type(8), 
-.grupo:nth-of-type(12) {
-    background-color: #3e2723; /* Marron muy oscuro casi negro */
-    border: 4px solid #5d4037;
-}
-
-/* Ajuste para los inputs dentro de los grupos de color */
-.grupo input {
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid #000;
-    font-weight: bold;
-    color: #000;
-}
-/* CAMBIO DE DISEÑO FINAL - ESTILO CANCHA */
-
 body {
-    /* Verde pasto fuerte */
-    background-color: #2e7d32; 
-    color: white;
-    font-family: 'Verdana', sans-serif; /* Cambie la letra */
+    background-color: #f5f5f5; /* Fondo muy claro */
+    color: #333333; /* Texto principal gris oscuro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente limpia */
     margin: 0;
-    padding: 15px;
+    padding: 20px;
+    text-align: center;
 }
 
 h1, h2, h3 {
     text-transform: uppercase;
     text-align: center;
-    color: #ffffff; /* Blanco puro */
-    text-shadow: 2px 2px 4px #000000; /* Sombra negra para que resalte */
+    color: #0077c2; /* Azul suave de acento */
+    text-shadow: none; /* Quitamos la sombra negra */
+    margin-bottom: 5px;
 }
 
-/* Arreglando los inputs para que se vean en el fondo verde */
-input[type="text"], input[type="number"] {
-    background-color: #f1f8e9; /* Verde muy clarito */
-    border: 2px solid #1b5e20;
-    padding: 8px;
-    color: black;
+.caja-login {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.btn-grande {
+    background-color: #0077c2;
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
     font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-grande:hover {
+    background-color: #005a96;
+}
+
+/* Arreglando los inputs */
+input[type="text"], input[type="number"] {
+    background-color: white;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    color: #333333;
+    font-weight: normal;
+    border-radius: 4px;
+    width: 90%;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   ESTILOS DE GRUPOS (Limpio, con sombras suaves)
+   ========================================= */
+
+.grupo {
+    background-color: white;
+    color: #333333;
+    border: 1px solid #eeeeee; /* Borde muy sutil */
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block; 
+    vertical-align: top;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra más sutil */
+}
+
+.grupo input {
+    width: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.grupo h3 {
+    color: #0077c2; /* Acabado en azul */
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 5px;
+}
+
+/* QUITAMOS LOS COLORES VIBRANTES, dejamos un color suave de fondo */
+.grupo:nth-of-type(odd) {
+    background-color: #f9f9f9; /* Un toque de gris en los impares */
+}
+.grupo:nth-of-type(even) {
+    background-color: white;
+}
+
+/* =========================================
+   FASE FINAL Y BOTONES
+   ========================================= */
+
+.fase-elim {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 25px;
+    border: 1px solid #dddddd;
+    margin: 20px auto;
+    max-width: 800px;
     border-radius: 8px;
 }
 
-/* Boton guardar mas llamativo */
+.caja-final {
+    border: 2px solid #ffd700; /* Dorado para destacar, pero con un fondo neutro */
+    padding: 20px; 
+    background-color: #f9f9f9; 
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
 .btn-guardar {
-    background-color: #ffeb3b; /* Amarillo patito */
-    color: black;
-    border: 3px solid orange;
-    box-shadow: 0px 5px 0px #f57f17; /* Efecto 3D simple */
+    background-color: #4caf50; /* Verde suave (Guardar/Éxito) */
+    color: white;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transition: background-color 0.3s;
 }
 
-.btn-guardar:active {
-    box-shadow: none;
-    transform: translateY(5px);
+.btn-guardar:hover {
+    background-color: #388e3c;
 }
-/* ARREGLOS PARA CELULAR */
-/* Busque en google como hacer que se vea bien en movil */
 
-@media only screen and (max-width: 600px) {
-    .grupo {
-        width: 90%; /* Que ocupe casi toda la pantalla */
-        display: block; /* Que se pongan uno abajo del otro */
-        margin-left: auto;
-        margin-right: auto;
-    }
+/* =========================================
+   FOOTER Y MOVIL
+   ========================================= */
 
-    input[type="text"] {
-        width: 100%; /* Los inputs de texto grandes */
-    }
-
-    .fase-elim {
-        font-size: 14px;
-        padding: 5px;
-    }
-    
-    /* Achicar un poco los numeros */
-    input[type="number"] {
-        width: 30px; 
-    }
-}
 .footer-final {
-    background-color: #1b5e20; 
-    color: #bdbdbd; 
+    background-color: #eeeeee; /* Gris muy claro */
+    color: #666666; 
     text-align: center;
     padding: 20px;
     margin-top: 50px;
-    border-top: 5px solid #ffd700; 
+    border-top: 1px solid #dddddd;
+}
+
+.footer-final button {
+    background-color: #f44336 !important; /* Rojo sutil para borrar */
+    color: white !important;
+    border-radius: 4px;
+    padding: 5px 10px !important;
+    font-size: 12px !important;
+    border: none !important;
+    margin-top: 10px;
 }
 
 @media only screen and (max-width: 600px) {
     .grupo {
-        width: 90%; 
+        width: 95%; 
         display: block; 
         margin-left: auto;
         margin-right: auto;
     }
-
-    input[type="text"] {
-        width: 100%;
-    }
-
-    input[type="number"] {
-        width: 30px; 
-    }
-}
-/* ESTILOS DEL FINAL */
-
-.footer-final {
-    background-color: #1b5e20; /* Verde mas oscuro que el fondo */
-    color: #bdbdbd; /* Gris clarito */
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-    border-top: 5px solid #ffd700; /* Linea dorada final */
-}
-
-.footer-final p {
-    margin: 5px;
-    font-size: 14px;
 }
