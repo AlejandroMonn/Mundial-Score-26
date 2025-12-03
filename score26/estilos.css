@@ -11,7 +11,7 @@ h1, h2, h3 {
     text-transform: uppercase;
     text-align: center;
     color: #0077c2; /* Azul suave de acento */
-    text-shadow: none; /* Quitamos la sombra negra */
+    text-shadow: none; 
     margin-bottom: 5px;
 }
 
@@ -40,7 +40,6 @@ h1, h2, h3 {
     background-color: #005a96;
 }
 
-/* Arreglando los inputs */
 input[type="text"], input[type="number"] {
     background-color: white;
     border: 1px solid #cccccc;
@@ -52,14 +51,11 @@ input[type="text"], input[type="number"] {
     margin-bottom: 15px;
 }
 
-/* =========================================
-   ESTILOS DE GRUPOS (Limpio, con sombras suaves)
-   ========================================= */
 
 .grupo {
     background-color: white;
     color: #333333;
-    border: 1px solid #eeeeee; /* Borde muy sutil */
+    border: 13px solid #eeeeee; 
     padding: 15px;
     margin: 10px;
     width: 300px;
@@ -67,7 +63,7 @@ input[type="text"], input[type="number"] {
     vertical-align: top;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra más sutil */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .grupo input {
@@ -78,22 +74,19 @@ input[type="text"], input[type="number"] {
 }
 
 .grupo h3 {
-    color: #0077c2; /* Acabado en azul */
+    color: #0077c2;
     border-bottom: 2px solid #eeeeee;
     padding-bottom: 5px;
 }
 
-/* QUITAMOS LOS COLORES VIBRANTES, dejamos un color suave de fondo */
+
 .grupo:nth-of-type(odd) {
-    background-color: #f9f9f9; /* Un toque de gris en los impares */
+    background-color: #f9f9f9;
 }
 .grupo:nth-of-type(even) {
     background-color: white;
 }
 
-/* =========================================
-   FASE FINAL Y BOTONES
-   ========================================= */
 
 .fase-elim {
     background-color: #ffffff;
@@ -106,7 +99,7 @@ input[type="text"], input[type="number"] {
 }
 
 .caja-final {
-    border: 2px solid #ffd700; /* Dorado para destacar, pero con un fondo neutro */
+    border: 2px solid #ffd700;
     padding: 20px; 
     background-color: #f9f9f9; 
     margin: 20px auto;
@@ -133,9 +126,6 @@ input[type="text"], input[type="number"] {
     background-color: #388e3c;
 }
 
-/* =========================================
-   FOOTER Y MOVIL
-   ========================================= */
 
 .footer-final {
     background-color: #eeeeee; /* Gris muy claro */
@@ -164,3 +154,4 @@ input[type="text"], input[type="number"] {
         margin-right: auto;
     }
 }
+
