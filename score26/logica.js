@@ -12,7 +12,7 @@ if (currentUser && document.getElementById("verNombre")) {
 
 function guardarNombre() {
     var inputNombre = document.getElementById("nombreUsuario").value;
-    if (inputNombre == "") { alert("Escribe un nombre!"); return; }
+    if (inputNombre == "") { alert("write a name pls"); return; }
     localStorage.setItem("nombre_usuario_polla", inputNombre);
     window.location.href = "juego.html";
 }
@@ -165,22 +165,22 @@ function calcularPuntajeUnico(prediccion, oficial) {
 
 async function mostrarTablaPosiciones() {
     var divTabla = document.getElementById("tablaContenedor");
-    divTabla.innerHTML = "Descargando resultados oficiales...";
+    divTabla.innerHTML = "getting oficial results...";
 
     const { data: oficial, error: errOfi } = await _supabase
         .from('resultados_oficiales').select('resultados').eq('id', 1);
     
     if(errOfi || !oficial || oficial.length == 0) {
-        divTabla.innerHTML = "<h3>Aún no hay resultados oficiales cargados por el admin para hacer el cálculo.</h3>";
+        divTabla.innerHTML = "<h3>No official results have been uploaded by the administrator yet to perform the calculation</h3>";
         return;
     }
     var resOficiales = oficial[0].resultados;
-    divTabla.innerHTML = "Resultados oficiales cargados. Calculando puntajes de jugadores...";
+    divTabla.innerHTML = "Official results uploaded. Calculating player scores...";
 
     const { data: jugadores, error: errJug } = await _supabase
         .from('predicciones').select('usuario, datos_juego');
 
-    if(errJug) { divTabla.innerHTML = "Error cargando jugadores."; return; }
+    if(errJug) { divTabla.innerHTML = "Error loading players"; return; }
 
     var ranking = [];
 
@@ -211,6 +211,7 @@ async function mostrarTablaPosiciones() {
     html += "</table>";
     divTabla.innerHTML = html;
 }
+
 
 
 
