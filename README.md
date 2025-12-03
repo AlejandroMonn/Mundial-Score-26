@@ -38,7 +38,7 @@ Special Final Points
 6th get the API url and key and paste it on logica.js file in the first 2 VAR 
 
 7th open admin html in your pc and update the result of the matches so the software can make the calcutions  to update the leadboards
-
+the pasword for "admin.html" is "admin123" change it when you can
 
 Created by: Alejandro montoya
 Version: 1.0 (December 2025)
