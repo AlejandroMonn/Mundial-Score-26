@@ -26,4 +26,10 @@ Si eres administrador u organizador, estos son los pasos para controlar todo com
 
 5. Para «predicciones», crea las siguientes columnas: «fecha» en formato timestampz, «datos_juego» en formato jsonb y «usuario» en formato texto (cadena).
 
-6. Obtén la URL y la clave de la API y pégalas en
+6. Obtenga la URL y la clave de la API y péguelas en el archivo logica.js en las dos primeras VAR.
+
+7. Abra el archivo html de administración en su ordenador y actualice el resultado de los partidos para que el software pueda realizar los cálculos necesarios para actualizar las tablas de clasificación.
+
+Creado por: Alejandro Montoya Versión: 1.0 (diciembre de 2025)
+
+Nota: Las agrupaciones específicas de equipos aún no son definitivas, ya que aún no se ha realizado el sorteo. Por ahora, utilizamos A1, A2, etc. Solo México, Canadá y EE. UU. tienen plazas fijas. El viernes 13 de diciembre se actualizará este código.
