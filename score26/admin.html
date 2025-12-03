@@ -2,16 +2,16 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>ADMINISTRADOR - Polla 2026</title>
+    <title>ADMINISTRATOR - Polla WORLD CUP 2026</title>
     <link rel="stylesheet" href="estilos.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>body { background-color: #333; color: #ddd; } h1 { color: red; }</style>
 </head>
 <body>
     <center>
-        <h1>⚠️ ZONA DE ADMINISTRADOR ⚠️</h1>
-        <h3>Ingresa aquí los RESULTADOS REALES de los partidos</h3>
-        <p>Esto actualizará la tabla de posiciones de todos los jugadores.</p>
+        <h1>⚠️ADMINISTRATOR AREA⚠️</h1>
+        <h3>Enter the ACTUAL RESULTS of the matches here.</h3>
+        <p>This will update the leaderboard for all players.</p>
     </center>
 
     <div id="contenedorGruposAdmin"></div>
@@ -35,10 +35,10 @@
     </script>
 
     <hr>
-    <center><h2>FASE FINAL OFICIAL</h2></center>
+    <center><h2>OFFICIAL FINAL STAGE</h2></center>
     
     <div class="fase-elim" style="border-color: red;">
-        <h3>16vos de Final</h3>
+        <h3>Round of 32</h3>
         <script>
             for(var i=1; i<=16; i++) {
                 document.write(`
@@ -52,7 +52,7 @@
             }
         </script>
 
-        <h3>Octavos (Partidos 17-24)</h3>
+        <h3>Round of 16 (matches 17-24)</h3>
         <script>
             for(var i=17; i<=24; i++) {
                 document.write(`
@@ -64,7 +64,7 @@
             }
         </script>
         
-        <h3>Cuartos (A, B, C, D)</h3>
+        <h3>round of 8 (A, B, C, D)</h3>
         <script>
             ["A","B","C","D"].forEach(letra => {
                 document.write(`
@@ -75,11 +75,11 @@
             });
         </script>
 
-        <h3>Semis, 3ero y Final</h3>
+        <h3>Semis, 3rd and Final</h3>
         <div class="partido-elim"><p>SF1</p><input type="number" id="goles_2_1_L_OFICIAL">-<input type="number" id="goles_2_1_V_OFICIAL"><br>L<input type="checkbox" id="penales_2_1_L_OFICIAL"> V<input type="checkbox" id="penales_2_1_V_OFICIAL"></div>
         <div class="partido-elim"><p>SF2</p><input type="number" id="goles_2_2_L_OFICIAL">-<input type="number" id="goles_2_2_V_OFICIAL"><br>L<input type="checkbox" id="penales_2_2_L_OFICIAL"> V<input type="checkbox" id="penales_2_2_V_OFICIAL"></div>
         
-        <div class="partido-elim"><p>3er Puesto</p><input type="number" id="goles_3er_L_OFICIAL">-<input type="number" id="goles_3er_V_OFICIAL"><br>L<input type="checkbox" id="penales_3er_L_OFICIAL"> V<input type="checkbox" id="penales_3er_V_OFICIAL"></div>
+        <div class="partido-elim"><p>3rd place</p><input type="number" id="goles_3er_L_OFICIAL">-<input type="number" id="goles_3er_V_OFICIAL"><br>L<input type="checkbox" id="penales_3er_L_OFICIAL"> V<input type="checkbox" id="penales_3er_V_OFICIAL"></div>
         
         <div class="partido-elim" style="background:gold"><p>FINAL</p><input type="number" id="goles_final_L_OFICIAL">-<input type="number" id="goles_final_V_OFICIAL"><br>L<input type="checkbox" id="penales_final_L_OFICIAL"> V<input type="checkbox" id="penales_final_V_OFICIAL"></div>
     </div>
@@ -93,9 +93,10 @@
     </div>
 
     <br><br>
-    <button onclick="guardarResultadosOficiales()" class="btn-guardar" style="background-color: red;">GUARDAR RESULTADOS OFICIALES</button>
+    <button onclick="guardarResultadosOficiales()" class="btn-guardar" style="background-color: red;">SAVE OFFICIAL RESULTS</button>
 
     <script src="logica.js"></script>
 </body>
 
 </html>
+
