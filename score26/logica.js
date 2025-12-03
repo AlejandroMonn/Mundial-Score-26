@@ -2,7 +2,7 @@ var supabaseUrl = 'https://zempomjffaygqjvyvliw.supabase.co';
 var supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InplbXBvbWpmZmF5Z3Fqdnl2bGl3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ3MTExNjMsImV4cCI6MjA4MDI4NzE2M30.KEF5h9xAwjAa8Ve93LfipPlxsIbfOWLibOh3jV4mVRw'; 
 var _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-console.log("Sistema cargado. Conectado a base de datos.");
+console.log("System loaded. Connected to database.");
 
 
 var currentUser = localStorage.getItem("nombre_usuario_polla");
@@ -17,7 +17,7 @@ function guardarNombre() {
     window.location.href = "juego.html";
 }
 function irAAdmin() {
-    var pass = prompt("🔒 ACCESO RESTRINGIDO 🔒\nIngresa la contraseña de administrador:");
+    var pass = prompt("🔒 RESTRICTED ACCESS 🔒\nEnter the administrator password:");
     if(pass == "admin123") {
         window.location.href = "admin.html";
     } else {
@@ -27,7 +27,7 @@ function irAAdmin() {
 
 async function guardarDatos() {
     var nombre = localStorage.getItem("nombre_usuario_polla");
-    if(!nombre) { alert("Sin nombre no se puede guardar."); return; }
+    if(!nombre) { alert("Without a name, it cannot be saved"); return; }
     
     var misPredicciones = {};
 
@@ -211,5 +211,6 @@ async function mostrarTablaPosiciones() {
     html += "</table>";
     divTabla.innerHTML = html;
 }
+
 
 
