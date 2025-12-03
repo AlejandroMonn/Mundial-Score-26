@@ -57,15 +57,15 @@ async function guardarDatos() {
     if (error) {
         alert("Error al guardar: " + error.message);
     } else {
-        alert("¡Polla guardada con éxito!");
+        alert("¡Polla  Successfully saved!");
         document.querySelector(".btn-guardar").disabled = true;
     }
 }
 
 
 async function guardarResultadosOficiales() {
-    var password = prompt("Contraseña de Admin:");
-    if(password != "admin123") { alert("Contraseña incorrecta"); return; } 
+    var password = prompt("Admin Password:");
+    if(password != "admin123") { alert("Incorrect password"); return; } 
 
     var resultadosOficiales = {};
     
@@ -87,7 +87,7 @@ async function guardarResultadosOficiales() {
         .upsert({ id: 1, resultados: resultadosOficiales }, { onConflict: 'id' });
 
     if(error) alert("Error admin: " + error.message);
-    else alert("Resultados Oficiales actualizados correctamente.");
+    else alert("Official results updated correctly");
 }
 
 // Función  que compara la polla del usuario vs la oficial
@@ -96,7 +96,7 @@ function calcularPuntajeUnico(prediccion, oficial) {
 
     for (var key in oficial) {
         
-        if (key.includes("_local") && !key.includes("penales")) {
+        if (key.includes("_local") && !key.includes("penalties")) {
             var keyVisita = key.replace("_local", "_visit");
             
             var realL = parseInt(oficial[key]);
@@ -211,6 +211,7 @@ async function mostrarTablaPosiciones() {
     html += "</table>";
     divTabla.innerHTML = html;
 }
+
 
 
 
