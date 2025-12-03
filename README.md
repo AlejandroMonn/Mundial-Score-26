@@ -25,13 +25,13 @@ Special Final Points
 - Correct **Top Goal-Scoring Team**: **8 points**
 
 If you are a adminastrator o r organizing here are the steps to control everything as adminastrator:
-1st open an account on supabase
-2 create a new proyect called mundialscore
-3rd create 2 databses called ( "predicciones" and " resultados_oficiales " )
-4th for " resultados_oficiales " cretae a new column called " resultados " in the format of jsonb
-5th for "predicciones" create  the next columns ( fecha  in format timestampz, datos_juego in format jsonb and usuario in format text (string))
-6th get the API url and key and paste it on logica.js file in the first 2 VAR 
-7th open admin html in your pc and update the result of the matches so the software can make the calcutions  to update the leadboards
+*1st open an account on supabase
+*2 create a new proyect called mundialscore
+*3rd create 2 databses called ( "predicciones" and " resultados_oficiales " )
+*4th for " resultados_oficiales " cretae a new column called " resultados " in the format of jsonb
+*5th for "predicciones" create  the next columns ( fecha  in format timestampz, datos_juego in format jsonb and usuario in format text (string))
+*6th get the API url and key and paste it on logica.js file in the first 2 VAR 
+*7th open admin html in your pc and update the result of the matches so the software can make the calcutions  to update the leadboards
 
 Created by: Alejandro montoya
 Version: 1.0 (November 2025)
