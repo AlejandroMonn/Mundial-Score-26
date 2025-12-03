@@ -1,4 +1,3 @@
-
 var supabaseUrl = 'https://zempomjffaygqjvyvliw.supabase.co'; 
 var supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InplbXBvbWpmZmF5Z3Fqdnl2bGl3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ3MTExNjMsImV4cCI6MjA4MDI4NzE2M30.KEF5h9xAwjAa8Ve93LfipPlxsIbfOWLibOh3jV4mVRw'; 
 var _supabase = supabase.createClient(supabaseUrl, supabaseKey);
@@ -17,8 +16,15 @@ function guardarNombre() {
     localStorage.setItem("nombre_usuario_polla", inputNombre);
     window.location.href = "juego.html";
 }
+function irAAdmin() {
+    var pass = prompt("🔒 ACCESO RESTRINGIDO 🔒\nIngresa la contraseña de administrador:");
+    if(pass == "admin123") {
+        window.location.href = "admin.html";
+    } else {
+        alert("Contraseña incorrecta.");
+    }
+}
 
-// Guardar predicciones del usuario
 async function guardarDatos() {
     var nombre = localStorage.getItem("nombre_usuario_polla");
     if(!nombre) { alert("Sin nombre no se puede guardar."); return; }
@@ -205,4 +211,5 @@ async function mostrarTablaPosiciones() {
     html += "</table>";
     divTabla.innerHTML = html;
 }
+
 
