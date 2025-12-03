@@ -1,5 +1,5 @@
 
-var supabaseUrl = 'https://zempomjffaygqjvyvliw.supabase.co; 
+var supabaseUrl = 'https://zempomjffaygqjvyvliw.supabase.co'; 
 var supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InplbXBvbWpmZmF5Z3Fqdnl2bGl3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ3MTExNjMsImV4cCI6MjA4MDI4NzE2M30.KEF5h9xAwjAa8Ve93LfipPlxsIbfOWLibOh3jV4mVRw'; 
 var _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
@@ -58,7 +58,7 @@ async function guardarDatos() {
 
 
 async function guardarResultadosOficiales() {
-    var password = prompt("Contraseña de Admin:");️
+    var password = prompt("Contraseña de Admin:");
     if(password != "admin123") { alert("Contraseña incorrecta"); return; } 
 
     var resultadosOficiales = {};
@@ -205,3 +205,4 @@ async function mostrarTablaPosiciones() {
     html += "</table>";
     divTabla.innerHTML = html;
 }
+
