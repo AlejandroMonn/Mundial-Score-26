@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ADMINISTRADOR - Polla 2026</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>body { background-color: #333; color: #ddd; } h1 { color: red; }</style>
+</head>
+<body>
+    <center>
+        <h1>⚠️ ZONA DE ADMINISTRADOR ⚠️</h1>
+        <h3>Ingresa aquí los RESULTADOS REALES de los partidos</h3>
+        <p>Esto actualizará la tabla de posiciones de todos los jugadores.</p>
+    </center>
+
+    <div id="contenedorGruposAdmin"></div>
+
+    <script>
+        // Generador automático de inputs de grupos para el ADMIN
+        // Esto crea los inputs gA_p1_local_OFICIAL, etc.
+        var htmlGrupos = "";
+        var letras = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
+        
+        letras.forEach(letra => {
+            htmlGrupos += `<div class="grupo" style="border-color: red;">
+                <h3>GRUPO ${letra} (Oficial)</h3>`;
+            for(var i=1; i<=6; i++) {
+                htmlGrupos += `<p>P${i}: <input type="number" id="g${letra}_p${i}_local_OFICIAL" style="width:30px"> - 
+                               <input type="number" id="g${letra}_p${i}_visit_OFICIAL" style="width:30px"></p>`;
+            }
+            htmlGrupos += `</div>`;
+        });
+        document.getElementById("contenedorGruposAdmin").innerHTML = htmlGrupos;
+    </script>
+
+    <hr>
+    <center><h2>FASE FINAL OFICIAL</h2></center>
+    
+    <div class="fase-elim" style="border-color: red;">
+        <h3>16vos de Final</h3>
+        <script>
+            for(var i=1; i<=16; i++) {
+                document.write(`
+                <div class="partido-elim">
+                    <p>Partido ${i}</p>
+                    <input type="number" id="goles_16_${i}_L_OFICIAL"> - <input type="number" id="goles_16_${i}_V_OFICIAL">
+                    <br> Penales: 
+                    L <input type="checkbox" id="penales_16_${i}_L_OFICIAL"> 
+                    V <input type="checkbox" id="penales_16_${i}_V_OFICIAL">
+                </div><hr>`);
+            }
+        </script>
+
+        <h3>Octavos (Partidos 17-24)</h3>
+        <script>
+            for(var i=17; i<=24; i++) {
+                document.write(`
+                <div class="partido-elim">
+                    <p>Partido ${i}</p>
+                    <input type="number" id="goles_8_${i}_L_OFICIAL"> - <input type="number" id="goles_8_${i}_V_OFICIAL">
+                    <br> Penales: L <input type="checkbox" id="penales_8_${i}_L_OFICIAL"> V <input type="checkbox" id="penales_8_${i}_V_OFICIAL">
+                </div><hr>`);
+            }
+        </script>
+        
+        <h3>Cuartos (A, B, C, D)</h3>
+        <script>
+            ["A","B","C","D"].forEach(letra => {
+                document.write(`
+                <div class="partido-elim"><p>Cuartos ${letra}</p>
+                <input type="number" id="goles_4_${letra}_L_OFICIAL"> - <input type="number" id="goles_4_${letra}_V_OFICIAL">
+                <br>Penales: L <input type="checkbox" id="penales_4_${letra}_L_OFICIAL"> V <input type="checkbox" id="penales_4_${letra}_V_OFICIAL">
+                </div>`);
+            });
+        </script>
+
+        <h3>Semis, 3ero y Final</h3>
+        <div class="partido-elim"><p>SF1</p><input type="number" id="goles_2_1_L_OFICIAL">-<input type="number" id="goles_2_1_V_OFICIAL"><br>L<input type="checkbox" id="penales_2_1_L_OFICIAL"> V<input type="checkbox" id="penales_2_1_V_OFICIAL"></div>
+        <div class="partido-elim"><p>SF2</p><input type="number" id="goles_2_2_L_OFICIAL">-<input type="number" id="goles_2_2_V_OFICIAL"><br>L<input type="checkbox" id="penales_2_2_L_OFICIAL"> V<input type="checkbox" id="penales_2_2_V_OFICIAL"></div>
+        
+        <div class="partido-elim"><p>3er Puesto</p><input type="number" id="goles_3er_L_OFICIAL">-<input type="number" id="goles_3er_V_OFICIAL"><br>L<input type="checkbox" id="penales_3er_L_OFICIAL"> V<input type="checkbox" id="penales_3er_V_OFICIAL"></div>
+        
+        <div class="partido-elim" style="background:gold"><p>FINAL</p><input type="number" id="goles_final_L_OFICIAL">-<input type="number" id="goles_final_V_OFICIAL"><br>L<input type="checkbox" id="penales_final_L_OFICIAL"> V<input type="checkbox" id="penales_final_V_OFICIAL"></div>
+    </div>
+
+    <div class="caja-final">
+        <h3>Premios Finales Oficiales</h3>
+        <input type="text" id="campeon_OFICIAL" placeholder="Campeón Oficial"><br>
+        <input type="text" id="subcampeon_OFICIAL" placeholder="Subcampeón Oficial"><br>
+        <input type="text" id="tercero_OFICIAL" placeholder="3er Puesto Oficial"><br>
+        <input type="text" id="goleadora_OFICIAL" placeholder="Goleadoara Oficial"><br>
+    </div>
+
+    <br><br>
+    <button onclick="guardarResultadosOficiales()" class="btn-guardar" style="background-color: red;">GUARDAR RESULTADOS OFICIALES</button>
+
+    <script src="logica.js"></script>
+</body>
+</html>
