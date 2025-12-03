@@ -1,30 +1,29 @@
-Mundial-Score-26
-Este es un programa que te ahorra tiempo para hacer pollas de futbol(Apuestas entre comunidades rankeadas en puntos) que esta disponible en Java Script
-Polla Mundialista 2026 🇨🇴
+Sorteo de la Copa Mundial 2026 (Polla Mundialista) Hecho en Colombia
 
-Esta es una aplicación web para jugar la polla del mundial de 2026 que va a ser en USA, Mexico y Canada.
+Esta es una aplicación web creada para organizar el sorteo de la Copa Mundial 2026 en Estados Unidos, México y Canadá.
 
-Como funciona
-El proyecto esta hecho con HTML y JavascSript puro (no use frameworks raros).
-Usa una base de datos gratis de Supabase.
+Cómo funciona El proyecto está construido utilizando HTML y JavaScript puros (sin utilizar marcos extraños). Utiliza una base de datos Supabase gratuita y basada en la nube para almacenar las predicciones.
 
-Pasos para jugar:
-1. Abre el archivo `index.html` en tu navegador (Chrome, Edge, el que sea).
-2. Pon tu nombre.
-3. Llena los marcadores de los grupos A hasta el L.
-4. OJO: En la fase de eliminacion si empatan tienes que marcar el checkbox de quien gana en penales.
-5. Al final eliges campeon, subcampeon, tercero y goleadora.
-6. Le das al boton amarillo de GUARDAR.
+Pasos para jugar: 1. Abra el archivo «index.html» en su navegador (Chrome, Edge, el que funcione). 2. Introduzca su nombre. 3. Rellene los resultados de los grupos A a L. 4. ATENCIÓN: En la fase eliminatoria, si predice un empate, debe marcar la casilla de verificación de quién gana en los penaltis. 5. Por último, elija el campeón, el subcampeón, el tercer clasificado y el equipo con más goles. 6. Pulse el botón amarillo GUARDAR.
 
-Reglas
-- Marcador exacto: 5 puntos
-- Ganador del partido: 2 puntos
-- Campeon: 13 puntos
-- Subcampeon: 10 puntos
-- Tercero: 6 puntos
-- Equipo goleador: 8 puntos
+Reglas de puntuación
 
-Hecho por: Alejandro Montoya
-Version: 1.0 (Noviembre 2025)
+Puntuación exacta: 5 puntos.
+Ganador o empate correcto (puntuación no exacta): 2 puntos.
+Puntos especiales finales
 
-Nota: Los grupos todavia no son reales porque no han sorteado, asi que puse A1, A2, etc. Solo Mexico, Canada y USA tienen puesto fijo.
+CAMPEÓN correcto: 13 puntos.
+SUBCAMPEÓN correcto: 10 puntos.
+TERCER CLASIFICADO correcto: 6 puntos.
+Equipo con más goles correcto: 8 puntos.
+Si eres administrador u organizador, estos son los pasos para controlar todo como administrador: 1. Abre una cuenta en Supabase.
+
+2. Crea un nuevo proyecto llamado «mundialscore».
+
+3. Crea dos bases de datos llamadas «predicciones» y «resultados_oficiales».
+
+4. Para «resultados_oficiales», crea una nueva columna llamada «resultados» en formato jsonb.
+
+5. Para «predicciones», crea las siguientes columnas: «fecha» en formato timestampz, «datos_juego» en formato jsonb y «usuario» en formato texto (cadena).
+
+6. Obtén la URL y la clave de la API y pégalas en
