@@ -6,7 +6,6 @@ var _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 console.log("Sistema cargado. Conectado a base de datos.");
 
 
-// Recuperar nombre al iniciar
 var currentUser = localStorage.getItem("nombre_usuario_polla");
 if (currentUser && document.getElementById("verNombre")) {
     document.getElementById("verNombre").innerText = currentUser;
@@ -26,11 +25,9 @@ async function guardarDatos() {
     
     var misPredicciones = {};
 
-
     var inputs = document.getElementsByTagName("input");
     for(var i=0; i<inputs.length; i++) {
         var elId = inputs[i].id;
-        // Filtramos por IDs de partidos o predicciones
         if(elId.includes("g") && (elId.includes("_local") || elId.includes("_visit")) || elId.includes("goles_") || elId.includes("penales_") || elId.includes("pred_")) {
             if(inputs[i].type == "checkbox") {
                 misPredicciones[elId] = inputs[i].checked;
@@ -40,13 +37,13 @@ async function guardarDatos() {
         }
     }
     
-    // Explicitamente guardar los premios finales
+    // guardar los premios finlaes
     misPredicciones["campeon"] = document.getElementById("pred_campeon").value;
     misPredicciones["subcampeon"] = document.getElementById("pred_subcampeon").value;
     misPredicciones["tercero"] = document.getElementById("pred_tercero").value;
     misPredicciones["goleadora"] = document.getElementById("pred_goleadora").value;
 
-    // Enviar a Supabase
+    // Enviar a a la base de dats
     const { data, error } = await _supabase
         .from('predicciones')
         .insert([{ usuario: nombre, fecha: new Date(), datos_juego: misPredicciones }]);
@@ -61,17 +58,14 @@ async function guardarDatos() {
 
 
 async function guardarResultadosOficiales() {
-    var password = prompt("Contraseña de Admin:");
-    // ⚠️ CAMBIA ESTA CONTRASEÑA ⚠️
+    var password = prompt("Contraseña de Admin:");️
     if(password != "admin123") { alert("Contraseña incorrecta"); return; } 
 
     var resultadosOficiales = {};
     
-    // Recoger todos los inputs que terminan en _OFICIAL
     var inputs = document.getElementsByTagName("input");
     for(var i=0; i<inputs.length; i++) {
         if(inputs[i].id.includes("_OFICIAL")) {
-            // Guardamos el ID SIN el "_OFICIAL" para poder compararlo facil despues
             var idLimpio = inputs[i].id.replace("_OFICIAL", "");
             
             if(inputs[i].type == "checkbox") {
@@ -82,7 +76,6 @@ async function guardarResultadosOficiales() {
         }
     }
 
-    // Guardar en tabla resultados_oficiales (ID 1 siempre, usando UPSERT para actualizar)
     const { data, error } = await _supabase
         .from('resultados_oficiales')
         .upsert({ id: 1, resultados: resultadosOficiales }, { onConflict: 'id' });
@@ -91,12 +84,10 @@ async function guardarResultadosOficiales() {
     else alert("Resultados Oficiales actualizados correctamente.");
 }
 
-
-// Función matematica que compara la polla del usuario vs la oficial
+// Función  que compara la polla del usuario vs la oficial
 function calcularPuntajeUnico(prediccion, oficial) {
     var total = 0;
 
-    // Recorremos todas las llaves que existen en los resultados oficiales
     for (var key in oficial) {
         
         if (key.includes("_local") && !key.includes("penales")) {
@@ -143,7 +134,7 @@ function calcularPuntajeUnico(prediccion, oficial) {
                         if(penalOficialL === penalUserL) total += 2;
                     } 
                     else if (ganaReal == ganaUser) {
-                        total += 2; // Gana el que gana (2 puntos)
+                        total += 2; 
                     }
                 }
             }
@@ -164,4 +155,53 @@ function calcularPuntajeUnico(prediccion, oficial) {
     compararTexto("goleadora", 8);
 
     return total;
+}
+
+async function mostrarTablaPosiciones() {
+    var divTabla = document.getElementById("tablaContenedor");
+    divTabla.innerHTML = "Descargando resultados oficiales...";
+
+    const { data: oficial, error: errOfi } = await _supabase
+        .from('resultados_oficiales').select('resultados').eq('id', 1);
+    
+    if(errOfi || !oficial || oficial.length == 0) {
+        divTabla.innerHTML = "<h3>Aún no hay resultados oficiales cargados por el admin para hacer el cálculo.</h3>";
+        return;
+    }
+    var resOficiales = oficial[0].resultados;
+    divTabla.innerHTML = "Resultados oficiales cargados. Calculando puntajes de jugadores...";
+
+    const { data: jugadores, error: errJug } = await _supabase
+        .from('predicciones').select('usuario, datos_juego');
+
+    if(errJug) { divTabla.innerHTML = "Error cargando jugadores."; return; }
+
+    var ranking = [];
+
+    jugadores.forEach(jugador => {
+        var puntos = calcularPuntajeUnico(jugador.datos_juego, resOficiales);
+        ranking.push({ nombre: jugador.usuario, puntos: puntos });
+    });
+
+    ranking.sort((a, b) => b.puntos - a.puntos);
+
+    var html = `<table style="width:100%; border-collapse:collapse; margin:20px 0;">
+                <tr style="background:#0077c2; color:white;">
+                    <th style="padding:10px; border: 1px solid #ddd;">#</th>
+                    <th style="padding:10px; border: 1px solid #ddd;">Jugador</th>
+                    <th style="padding:10px; border: 1px solid #ddd;">Puntos</th>
+                </tr>`;
+    
+    for(var i=0; i<ranking.length; i++) {
+        var colorFondo = (i % 2 == 0) ? "#f2f2f2" : "white";
+        if(i==0) colorFondo = "#fff9c4"; // Destacar al primero
+        
+        html += `<tr style="background:${colorFondo}; text-align:center;">
+                    <td style="padding:10px; border:1px solid #ddd;">${i+1}</td>
+                    <td style="padding:10px; border:1px solid #ddd; font-weight:bold;">${ranking[i].nombre}</td>
+                    <td style="padding:10px; border:1px solid #ddd; font-size:18px;">${ranking[i].puntos}</td>
+                 </tr>`;
+    }
+    html += "</table>";
+    divTabla.innerHTML = html;
 }
