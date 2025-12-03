@@ -155,3 +155,17 @@ input[type="text"], input[type="number"] {
     }
 }
 
+.btn-admin {
+    background-color: #333;
+    color: #ccc;
+    font-size: 12px;
+    padding: 8px 15px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.btn-admin:hover {
+    background-color: #000;
+    color: white;
+}
