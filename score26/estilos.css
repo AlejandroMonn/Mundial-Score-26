@@ -3,7 +3,7 @@ body {
     color: #333333; /* Texto principal gris oscuro */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente limpia */
     margin: 0;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
 }
 
@@ -55,7 +55,7 @@ input[type="text"], input[type="number"] {
 .grupo {
     background-color: white;
     color: #333333;
-    border: 13px solid #eeeeee; 
+    border: 20px solid #eeeeee; 
     padding: 15px;
     margin: 10px;
     width: 300px;
@@ -92,7 +92,7 @@ input[type="text"], input[type="number"] {
     background-color: #ffffff;
     color: #333333;
     padding: 25px;
-    border: 1px solid #dddddd;
+    border: 5px solid #dddddd;
     margin: 20px auto;
     max-width: 800px;
     border-radius: 8px;
@@ -169,3 +169,4 @@ input[type="text"], input[type="number"] {
     background-color: #000;
     color: white;
 }
+
