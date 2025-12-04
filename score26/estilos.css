@@ -1,160 +1,174 @@
 body {
-    background-color: #f5f5f5; /* Fondo muy claro */
-    color: #333333; /* Texto principal gris oscuro */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente limpia */
+    background-color: #fdfbf7; /* Crema muy suave, casi blanco */
+    color: #5d5d5d; /* Gris suave para el texto, no negro puro */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
-    padding: 25px;
+    padding: 20px;
     text-align: center;
 }
 
 h1, h2, h3 {
     text-transform: uppercase;
     text-align: center;
-    color: #0077c2; /* Azul suave de acento */
-    text-shadow: none; 
-    margin-bottom: 5px;
-}
-
-.caja-login {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    max-width: 400px;
-    margin: 20px auto;
-}
-
-.btn-grande {
-    background-color: #0077c2;
-    color: white;
-    padding: 15px 30px;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.btn-grande:hover {
-    background-color: #005a96;
-}
-
-input[type="text"], input[type="number"] {
-    background-color: white;
-    border: 1px solid #cccccc;
-    padding: 10px;
-    color: #333333;
-    font-weight: normal;
-    border-radius: 4px;
-    width: 90%;
+    color: #88b3c8; /* Azul pastel */
+    letter-spacing: 1px;
     margin-bottom: 15px;
 }
 
-
-.grupo {
-    background-color: white;
-    color: #333333;
-    border: 20px solid #eeeeee; 
-    padding: 15px;
-    margin: 10px;
-    width: 300px;
-    display: inline-block; 
-    vertical-align: top;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+h1 {
+    font-size: 2.5rem;
+    color: #ffb7b2; /* Rojo/Rosado pastel para el título */
 }
 
-.grupo input {
-    width: 30px;
-    text-align: center;
-    border: 1px solid #ccc;
-    padding: 5px;
+/* --- TARJETAS (GRUPOS) --- */
+.grupo {
+    background-color: #ffffff;
+    border: none; /* Sin bordes negros */
+    border-radius: 20px; /* Bordes muy redondeados */
+    padding: 20px;
+    margin: 15px;
+    width: 280px;
+    display: inline-block;
+    vertical-align: top;
+    
+    /* Sombra suave (Neumorfismo) */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
+    transition: transform 0.2s;
+}
+
+.grupo:hover {
+    transform: translateY(-5px); /* Efecto de flotar al pasar el mouse */
 }
 
 .grupo h3 {
-    color: #0077c2;
-    border-bottom: 2px solid #eeeeee;
-    padding-bottom: 5px;
+    border-bottom: 2px solid #ffdac1; /* Línea naranja pastel */
+    padding-bottom: 10px;
+    color: #5d5d5d;
+    font-size: 1.2rem;
 }
 
-
-.grupo:nth-of-type(odd) {
-    background-color: #f9f9f9;
-}
-.grupo:nth-of-type(even) {
-    background-color: white;
-}
-
-
-.fase-elim {
-    background-color: #ffffff;
-    color: #333333;
-    padding: 25px;
-    border: 5px solid #dddddd;
-    margin: 20px auto;
-    max-width: 800px;
-    border-radius: 8px;
+.grupo p {
+    font-size: 0.9rem;
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.caja-final {
-    border: 2px solid #ffd700;
-    padding: 20px; 
-    background-color: #f9f9f9; 
-    margin: 20px auto;
-    max-width: 500px;
-    border-radius: 8px;
+/* --- INPUTS MINIMALISTAS (SOLO NUMERO) --- */
+
+/* 1. Quitamos las flechas feas del input number */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number]
+
+/* 2. Diseño del input */
+input[type="number"] {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #f4f8f9; /* Gris muy clarito */
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: bold;
+    outline: none;
+    transition: all 0.3s;
+}
+
+input[type="number"]:focus {
+    background-color: #fff;
+    border-color: #b5ead7; /* Verde menta al escribir */
+    box-shadow: 0 0 5px #b5ead7;
+}
+
+/* Inputs de texto (Campeón, Nombre) */
+input[type="text"] {
+    border: none;
+    border-bottom: 2px solid #ffb7b2; /* Solo línea abajo */
+    background: transparent;
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+    color: #555;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* --- BOTONES PASTEL --- */
+
+.btn-grande, .btn-guardar {
+    border: none;
+    border-radius: 50px; /* Botones redondos */
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.1s;
+}
+
+.btn-grande {
+    background-color: #b5ead7; /* Menta pastel */
+    color: #4a7c59;
+    padding: 15px 40px;
+    font-size: 1.1rem;
 }
 
 .btn-guardar {
-    background-color: #4caf50; /* Verde suave (Guardar/Éxito) */
-    color: white;
-    border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    width: 100%;
-    padding: 20px;
-    font-size: 25px;
-    font-weight: bold;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    transition: background-color 0.3s;
+    background-color: #ffdac1; /* Durazno pastel */
+    color: #8c5e4a;
+    width: 90%;
+    max-width: 400px; /* Que no sea gigante en PC */
+    left: 50%;
+    transform: translateX(-50%); /* Centrado */
+    bottom: 20px;
 }
 
 .btn-guardar:hover {
-    background-color: #388e3c;
+    background-color: #ff9aa2; /* Rosado más fuerte al pasar mouse */
 }
 
-
-.footer-final {
-    background-color: #eeeeee; /* Gris muy claro */
-    color: #666666; 
-    text-align: center;
-    padding: 20px;
+/* Boton Admin discreto */
+.btn-admin {
+    background: none;
+    border: 1px solid #d3d3d3;
+    color: #999;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
     margin-top: 50px;
-    border-top: 1px solid #dddddd;
+}
+.btn-admin:hover {
+    background-color: #eee;
+    color: #555;
 }
 
-.footer-final button {
-    background-color: #f44336 !important; /* Rojo sutil para borrar */
-    color: white !important;
-    border-radius: 4px;
-    padding: 5px 10px !important;
-    font-size: 12px !important;
-    border: none !important;
-    margin-top: 10px;
+/* Login box */
+.caja-login {
+    background-color: white;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    display: inline-block;
 }
 
-@media only screen and (max-width: 600px) {
-    .grupo {
-        width: 95%; 
-        display: block; 
-        margin-left: auto;
-        margin-right: auto;
-    }
+/* Fases finales */
+.fase-elim {
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
 }
 
+.caja-final {
+    background-color: #fff9c4; /* Amarillo pastel muy suave */
+    border: 2px dashed #f9a825;
+    border-radius: 20px;
+}
 .btn-admin {
     background-color: #333;
     color: #ccc;
@@ -169,4 +183,3 @@ input[type="text"], input[type="number"] {
     background-color: #000;
     color: white;
 }
-
