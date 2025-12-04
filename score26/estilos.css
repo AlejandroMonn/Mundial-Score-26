@@ -1,6 +1,6 @@
 body {
-    background-color: #fdfbf7; /* Crema muy suave, casi blanco */
-    color: #5d5d5d; /* Gris suave para el texto, no negro puro */
+    background-color: #fdfbf7; 
+    color: #5d5d5d; 
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 20px;
@@ -10,38 +10,37 @@ body {
 h1, h2, h3 {
     text-transform: uppercase;
     text-align: center;
-    color: #88b3c8; /* Azul pastel */
+    color: #88b3c8;
     letter-spacing: 1px;
     margin-bottom: 15px;
 }
 
 h1 {
     font-size: 2.5rem;
-    color: #ffb7b2; /* Rojo/Rosado pastel para el título */
+    color: #ffb7b2; 
 }
 
-/* --- TARJETAS (GRUPOS) --- */
+
 .grupo {
     background-color: #ffffff;
-    border: none; /* Sin bordes negros */
-    border-radius: 20px; /* Bordes muy redondeados */
+    border: none; 
+    border-radius: 20px; 
     padding: 20px;
     margin: 15px;
     width: 280px;
     display: inline-block;
     vertical-align: top;
     
-    /* Sombra suave (Neumorfismo) */
     box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
     transition: transform 0.2s;
 }
 
 .grupo:hover {
-    transform: translateY(-5px); /* Efecto de flotar al pasar el mouse */
+    transform: translateY(-5px); 
 }
 
 .grupo h3 {
-    border-bottom: 2px solid #ffdac1; /* Línea naranja pastel */
+    border-bottom: 2px solid #ffdac1;
     padding-bottom: 10px;
     color: #5d5d5d;
     font-size: 1.2rem;
@@ -55,9 +54,7 @@ h1 {
     align-items: center;
 }
 
-/* --- INPUTS MINIMALISTAS (SOLO NUMERO) --- */
 
-/* 1. Quitamos las flechas feas del input number */
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -65,14 +62,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 input[type=number]
 
-/* 2. Diseño del input */
+
 input[type="number"] {
     width: 35px;
     height: 35px;
     text-align: center;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
-    background-color: #f4f8f9; /* Gris muy clarito */
+    background-color: #f4f8f9;
     color: #555;
     font-size: 1.1rem;
     font-weight: bold;
@@ -82,14 +79,13 @@ input[type="number"] {
 
 input[type="number"]:focus {
     background-color: #fff;
-    border-color: #b5ead7; /* Verde menta al escribir */
+    border-color: #b5ead7; 
     box-shadow: 0 0 5px #b5ead7;
 }
 
-/* Inputs de texto (Campeón, Nombre) */
 input[type="text"] {
     border: none;
-    border-bottom: 2px solid #ffb7b2; /* Solo línea abajo */
+    border-bottom: 2px solid #ffb7b2; 
     background: transparent;
     padding: 10px;
     width: 80%;
@@ -99,11 +95,10 @@ input[type="text"] {
     outline: none;
 }
 
-/* --- BOTONES PASTEL --- */
 
 .btn-grande, .btn-guardar {
     border: none;
-    border-radius: 50px; /* Botones redondos */
+    border-radius: 50px; 
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
@@ -112,27 +107,26 @@ input[type="text"] {
 }
 
 .btn-grande {
-    background-color: #b5ead7; /* Menta pastel */
+    background-color: #b5ead7; 
     color: #4a7c59;
     padding: 15px 40px;
     font-size: 1.1rem;
 }
 
 .btn-guardar {
-    background-color: #ffdac1; /* Durazno pastel */
+    background-color: #ffdac1; 
     color: #8c5e4a;
     width: 90%;
-    max-width: 400px; /* Que no sea gigante en PC */
+    max-width: 400px; 
     left: 50%;
-    transform: translateX(-50%); /* Centrado */
+    transform: translateX(-50%); 
     bottom: 20px;
 }
 
 .btn-guardar:hover {
-    background-color: #ff9aa2; /* Rosado más fuerte al pasar mouse */
+    background-color: #ff9aa2;
 }
 
-/* Boton Admin discreto */
 .btn-admin {
     background: none;
     border: 1px solid #d3d3d3;
@@ -147,7 +141,6 @@ input[type="text"] {
     color: #555;
 }
 
-/* Login box */
 .caja-login {
     background-color: white;
     padding: 40px;
@@ -156,7 +149,6 @@ input[type="text"] {
     display: inline-block;
 }
 
-/* Fases finales */
 .fase-elim {
     background-color: white;
     border-radius: 20px;
@@ -165,7 +157,7 @@ input[type="text"] {
 }
 
 .caja-final {
-    background-color: #fff9c4; /* Amarillo pastel muy suave */
+    background-color: #fff9c4;
     border: 2px dashed #f9a825;
     border-radius: 20px;
 }
@@ -183,3 +175,4 @@ input[type="text"] {
     background-color: #000;
     color: white;
 }
+
