@@ -11,7 +11,7 @@ Steps to Play:
 2nd Enter your name.
 3rd Fill in the scores for Groups A through L
 4th **ATTENTION:** In the knockout stage, if you predict a draw, you **must** mark the checkbox for who wins in penalties
-5th Finally choose the champion, runner-up, third Place, and Top socrer team
+5th Finally choose the champion, runner-up, third Place, and Top scorer team
 6th Hit the yellow **SAVE** button
 
 Scoring Rules
@@ -24,20 +24,20 @@ Special Final Points
 - Correct THIRD PLACE: 6 points
 - Correct Top Goal-Scoring Team: 8 points
 
-**If you are a adminastrator o r organizing here are the steps to control everything as adminastrator:**
+**If you are a administrator or organizing here are the steps to control everything as administrator:**
 1st open an account on supabase
 
-2 create a new proyect called mundialscore
+2 create a new project called mundialscore
 
 3rd create 2 databses called ( "predicciones" and " resultados_oficiales " )
 
-4th for " resultados_oficiales " cretae a new column called " resultados " in the format of jsonb
+4th for " resultados_oficiales " create a new column called " resultados " in the format of jsonb
 
 5th for "predicciones" create  the next columns ( fecha  in format timestampz, datos_juego in format jsonb and usuario in format text (string))
 
 6th get the API url and key and paste it on logica.js file in the first 2 VAR 
 
-7th open admin html in your pc and update the result of the matches so the software can make the calcutions  to update the leadboards
+7th open admin html in your pc and update the result of the matches so the software can make the calculations  to update the leaderboards
 the pasword for "admin.html" is "admin123" change it when you can
 
 Created by: Alejandro montoya
