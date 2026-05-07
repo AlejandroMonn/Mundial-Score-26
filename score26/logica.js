@@ -27,7 +27,7 @@ function irAAdmin() {
 
 async function guardarDatos() {
     var nombre = localStorage.getItem("nombre_usuario_polla");
-    if(!nombre) { alert("Without a name, it cannot be saved"); return; }
+    if(!nombre) { alert("Please enter a name first"); return; }
     
     var misPredicciones = {};
 
@@ -57,7 +57,7 @@ async function guardarDatos() {
     if (error) {
         alert("Error al guardar: " + error.message);
     } else {
-        alert("¡Polla  Successfully saved!");
+        alert("Polla successfully saved!");
         document.querySelector(".btn-guardar").disabled = true;
     }
 }
